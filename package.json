@@ -1,0 +1,80 @@
+{
+    "name": "code-enhancer",
+    "displayName": "Code Enhancer with Gemini",
+    "description": "Mejora tu código con comentarios, estilos, explicaciones y diagramas usando Gemini AI",
+    "version": "0.0.1", 
+    "publisher": "jfvg", 
+    "icon": "icon.png",
+    "repository": "", 
+    "engines": {
+        "vscode": "^1.50.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Formatters"
+    ],
+    "activationEvents": [
+        "onCommand:codeEnhancer.addComments",
+        "onCommand:codeEnhancer.enhanceStyle",
+        "onCommand:codeEnhancer.optimizeCode",
+        "onCommand:codeEnhancer.explainCode",
+        "onCommand:codeEnhancer.generateDiagram", 
+        "onCommand:codeEnhancer.resetApiKey"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "codeEnhancer.addComments",
+                "title": "Agregar comentarios"
+            },
+            {
+                "command": "codeEnhancer.enhanceStyle",
+                "title": "Mejorar estilo de código"
+            },
+            {
+                "command": "codeEnhancer.optimizeCode",
+                "title": "Optimizar Código"
+            },
+            {
+                "command": "codeEnhancer.explainCode",
+                "title": "Explicar Código"
+            },
+            {
+                "command": "codeEnhancer.generateDiagram",
+                "title": "Generar Diagrama Mermaid"
+            },            
+            {
+                "command": "codeEnhancer.resetApiKey",
+                "title": "Reset Gemini API Key"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "command": "codeEnhancer.addComments",
+                    "group": "modification"
+                },
+                {
+                    "command": "codeEnhancer.enhanceStyle",
+                    "group": "modification"
+                },
+                {
+                    "command": "codeEnhancer.optimizeCode",
+                    "group": "modification"
+                },
+                {
+                    "command": "codeEnhancer.explainCode",
+                    "group": "modification"
+                },                
+                {
+                    "command": "codeEnhancer.generateDiagram",
+                    "group": "modification"
+                }                
+            ]        
+        }
+    },
+    "dependencies": {
+        "@google/generative-ai": "^0.1.0"
+    }
+}
